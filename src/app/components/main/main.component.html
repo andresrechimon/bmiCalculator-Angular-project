@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-lg-4 offset-lg-4">
+    <h2 class="title">BMI CALCULATOR</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="theme-item" [ngClass]="{ 'sex-off': sex === 'F'}">
+          <div class="containers" style="cursor: pointer;" (click)="m()">
+            <i class="fa-solid fa-mars sex"></i>
+            <p>Masculino</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="col-lg-6">
+        <div class="theme-item" [ngClass]="{ 'sex-off': sex === 'M'}">
+          <div class="containers" style="cursor: pointer;" (click)="f()">
+            <i class="fa-solid fa-venus sex"></i>
+            <p>Femenino</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="theme-item">
+          <div class="containers">
+            <p>Altura</p>
+            <div class="number">{{height}}<span class="cm">cm</span></div>
+            <input type="range" (input)="changeHeight($event)" [value]="height" min="35" max="220" class="form-range">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="theme-item">
+          <div class="containers">
+            <p>Peso</p>
+            <div class="number">{{weight}}</div>
+            <div>
+                <i class="fa-solid fa-minus min-pls" (click)="weight = weight - 1"></i>
+                <i class="fa-solid fa-plus min-pls" (click)="weight = weight + 1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="col-lg-6">
+        <div class="theme-item">
+          <div class="containers">
+            <p>Edad</p>
+            <div class="number">{{age}}</div>
+            <div>
+                <i class="fa-solid fa-minus min-pls" (click)="age = age - 1"></i>
+                <i class="fa-solid fa-plus min-pls" (click)="age = age + 1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <button class="btn btn-primary btn-lg btn-block btn-color" (click)="calculateBMI()">CALCULAR</button>
+      </div>
+    </div>
+  </div>
+</div>
